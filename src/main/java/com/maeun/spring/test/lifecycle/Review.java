@@ -11,6 +11,11 @@ public class Review {
 		this.user = user;
 		this.content = content;
 	}
+	
+	@Override
+	public String toString() {
+		return "title : " + title + "\nuser : " + user + "\ncontent : " + content;
+	}
 
 	public String getTitle() {
 		return title;
