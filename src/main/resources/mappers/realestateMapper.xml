@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="com.maeun.spring.test.mybatis.repository.RealEstateRepository">
+ 	<select id="selectRealEstate" parameterType="int"
+ 	resultType="com.maeun.spring.test.mybatis.domain.RealEstate">
+ 		SELECT
+ 			`id`
+ 			,	`realtorId`
+ 			,	`address`
+ 			,	`area`
+ 			,	`type`
+ 			,	`price`
+ 			,	`rentPrice`
+ 			,	`createdAt`
+ 			,	`updatedAt`
+ 		FROM
+ 			`real_estate`
+ 		WHERE
+ 			`id` = #{id}
+ 	</select>
+ 	<select id="selectLowerRent" parameterType="int"
+ 	resultType="com.maeun.spring.test.mybatis.domain.RealEstate">
+ 		SELECT
+ 			`id`
+ 			,	`realtorId`
+ 			,	`address`
+ 			,	`area`
+ 			,	`type`
+ 			,	`price`
+ 			,	`rentPrice`
+ 			,	`createdAt`
+ 			,	`updatedAt`
+ 		FROM
+ 			`real_estate`
+ 		WHERE
+ 			`rentPrice` &lt; #{rent}
+ 			<!-- <![CDATA[ `rent` < #{rent} ]]> -->
+ 	</select>
+ 	<select id="selectComposite" parameterType="int"
+ 	resultType="com.maeun.spring.test.mybatis.domain.RealEstate">
+ 		SELECT
+ 			`id`
+ 			,	`realtorId`
+ 			,	`address`
+ 			,	`area`
+ 			,	`type`
+ 			,	`price`
+ 			,	`rentPrice`
+ 			,	`createdAt`
+ 			,	`updatedAt`
+ 		FROM
+ 			`real_estate`
+ 		WHERE
+ 			`type` = '매매' AND `area` &gt;= #{area} AND `price` &lt;= #{price}
+ 		ORDER BY
+ 			`createdAt` DESC
+ 	</select>
+ 	
+ 	
+ </mapper>
+ 
