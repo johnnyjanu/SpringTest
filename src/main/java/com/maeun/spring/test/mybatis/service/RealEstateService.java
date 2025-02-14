@@ -35,12 +35,19 @@ public class RealEstateService {
 	}
 	
 	public int changeRealEstate(RealEstate realEstate) {
+		
 		if(!realEstate.getType().equals("월세")) {
 			realEstate.setRentPrice(null);
 		} else if(realEstate.getRentPrice() == null) {
 			int rentPrice = realEstateRepository.selectRealEstate(realEstate.getId()).getRentPrice();
 			realEstate.setRentPrice(rentPrice);
 		}
+		
 		return realEstateRepository.updateRealEstate(realEstate);
 	}
+	
+	public int deleteRealEstate(int id) {
+		return realEstateRepository.deleteRealEstate(id);
+	}
 }
+

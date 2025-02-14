@@ -68,5 +68,12 @@ public class RealEstateController {
 		return "수정 성공 : " + count;
 	}
 	
+	@ResponseBody
+	@RequestMapping("/delete")
+	public String deleteEstate(@RequestParam("id") int id) {
+		int count = realEstateService.deleteRealEstate(id);
+		return "삭제 성공 : " + count;
+	}
+	
 
 }

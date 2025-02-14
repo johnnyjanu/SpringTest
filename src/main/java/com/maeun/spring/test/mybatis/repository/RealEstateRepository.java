@@ -23,4 +23,5 @@ public interface RealEstateRepository {
 			,	@Param("rentPrice") int rentPrice
 			);
 	public int updateRealEstate(RealEstate realEstate);
+	public int deleteRealEstate(@Param("id") int id);
 }
