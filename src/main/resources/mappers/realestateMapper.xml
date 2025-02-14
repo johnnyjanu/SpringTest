@@ -58,7 +58,59 @@
  		ORDER BY
  			`createdAt` DESC
  	</select>
- 	
+ 	<insert id="insertRealEstate" 
+ 	parameterType="com.maeun.spring.test.mybatis.domain.RealEstate">
+ 		INSERT 
+ 			`real_estate`
+ 		(
+ 			`realtorId`
+ 			,	`address`
+ 			,	`area`
+ 			,	`type`
+ 			,	`price`
+ 			,	`rentPrice`
+ 		)
+ 		VALUE
+ 		(
+ 			#{realtorId}
+ 			,	#{address}
+ 			,	#{area}
+ 			,	#{type}
+ 			,	#{price}
+ 			,	#{rentPrice}
+ 		)
+ 	</insert>
+ 	<insert id="insertRealEstateByMap" parameterType="map">
+ 		INSERT 
+ 			`real_estate`
+ 		(
+ 			`realtorId`
+ 			,	`address`
+ 			,	`area`
+ 			,	`type`
+ 			,	`price`
+ 			,	`rentPrice`
+ 		)
+ 		VALUE
+ 		(
+ 			#{realtorId}
+ 			,	#{address}
+ 			,	#{area}
+ 			,	#{type}
+ 			,	#{price}
+ 			,	#{rentPrice}
+ 		)
+ 	</insert>
+ 	<update id="updateRealEstate"
+ 	parameterType="com.maeun.spring.test.mybatis.domain.RealEstate">
+ 		UPDATE `real_estate`
+ 		SET
+ 			`type` = #{type}
+ 			,	`price` = #{price}
+ 			,	`rentPrice` = #{rentPrice}
+ 		WHERE
+ 			`id` = #{id}
+ 	</update>
  	
  </mapper>
  
