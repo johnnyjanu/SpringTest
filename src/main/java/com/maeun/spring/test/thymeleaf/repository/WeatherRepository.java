@@ -10,5 +10,6 @@ import com.maeun.spring.test.thymeleaf.domain.WeatherHistory;
 public interface WeatherRepository {
 	
 	public List<WeatherHistory> selectWeather();
+	public int insertWeather(WeatherHistory weatherHistory);
 
 }

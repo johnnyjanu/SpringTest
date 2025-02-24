@@ -18,5 +18,9 @@ public class WeatherService {
 		return weatherRepository.selectWeather();
 	}
 	
+	public int addWeather(WeatherHistory weatherHistory) {
+		return weatherRepository.insertWeather(weatherHistory);
+	}
+	
 
 }

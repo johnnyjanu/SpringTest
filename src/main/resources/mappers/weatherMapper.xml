@@ -18,5 +18,30 @@
  			, `updatedAt`
  		FROM
  			`weatherhistory`
+ 		ORDER BY
+ 			`date`
  	</select>
+ 	<insert id="insertWeather"
+ 	parameterType="com.maeun.spring.test.thymeleaf.domain.WeatherHistory">
+ 		INSERT INTO
+ 			`weatherhistory`
+ 		(
+ 			`date`
+ 			, `weather`
+ 			, `temperatures`
+ 			, `precipitation`
+ 			, `microDust`
+ 			, `windSpeed`
+ 		)
+ 		VALUE
+ 		(
+ 			#{date}
+ 			, #{weather}
+ 			, #{temperatures}
+ 			, #{precipitation}
+ 			, #{microDust}
+ 			, #{windSpeed}
+ 		)
+ 	</insert>
+ 	
  </mapper>
