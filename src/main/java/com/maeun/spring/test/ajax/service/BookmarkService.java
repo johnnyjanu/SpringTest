@@ -21,5 +21,14 @@ public class BookmarkService {
 	public List<Bookmark> getBookmark() {
 		return bookmarkRepository.selectBookmark();
 	}
-
+	
+	public Boolean isDuplicateUrl(String url) {
+		int count = bookmarkRepository.selectDuplicateByUrl(url);
+		if(count == 0) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+	
 }

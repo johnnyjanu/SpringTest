@@ -46,4 +46,12 @@ public class BookmarkController {
 		return "ajax/bookmarkInfo";
 	}
 	
+	@ResponseBody
+	@PostMapping("/duplicate")
+	public Map<String, Boolean> isDuplicateUrl(@RequestParam("url") String url) {
+		Map<String, Boolean> resultMap = new HashMap<> ();
+		resultMap.put("isDuplicate", bookmarkService.isDuplicateUrl(url));
+		return resultMap;
+	}
+	
 }

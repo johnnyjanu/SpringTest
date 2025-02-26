@@ -19,10 +19,19 @@
  	</insert>
  	<select id="selectBookmark" resultType="com.maeun.spring.test.ajax.domain.Bookmark">
  		SELECT
- 			`name`
+ 			`id`
+ 			, `name`
  			, `url`
  		FROM
  			`bookmark`
  	</select>
- 	
+ 	<select id="selectDuplicateByUrl"
+ 	resultType="int" parameterType="string">
+ 		SELECT
+ 			count(*)
+ 		FROM
+ 			`bookmark`
+ 		WHERE
+ 			`url` = #{url}
+ 	</select>
  </mapper>
