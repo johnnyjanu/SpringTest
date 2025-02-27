@@ -24,7 +24,7 @@
 				<td th:text="${bookmark.name}">이름</td>
 				<td th:text="${bookmark.url}">주소</td>
 				<td>
-					<button class="btn btn-danger btn-sm font-weight-bold delete-Btn" type="button" th:value="${bookmark.id}">삭제</button>
+					<button class="btn btn-danger btn-sm font-weight-bold delete-Btn" th:data-bookmark-id="${bookmark.id}" type="button">삭제</button>
 				</td>
 			</tr>
 		</tbody>
@@ -38,8 +38,27 @@
 <script>
 	$(function() {
 		$(".delete-Btn").on("click", function() {
-			alert($("this").val());
-			return;
+			let id = $(this).data("bookmark-id");
+			
+			$.ajax({
+				type:"get"
+				, url:"/ajax/bookmark/delete"
+				, data:{"id":id}
+				, success:function(response) {
+					if(response.result == 1) {
+						location.reload();
+						return;
+					} else {
+						alert("즐겨찾기 삭제 실패");
+						return;
+					}
+				}
+				, error:function(response) {
+					alert("즐겨찾기 삭제 에러");
+					return;
+				}
+				
+			})
 			
 		})
 		

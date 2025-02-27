@@ -34,4 +34,10 @@
  		WHERE
  			`url` = #{url}
  	</select>
+ 	<delete id="deleteUrl" parameterType="int">
+ 		DELETE FROM
+ 			`bookmark`
+ 		WHERE
+ 			`id` = #{id}
+ 	</delete>
  </mapper>

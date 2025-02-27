@@ -15,4 +15,5 @@ public interface BookmarkRepository {
 			, @Param("url") String url);
 	public List<Bookmark> selectBookmark();
 	public int selectDuplicateByUrl(@Param("url") String url);
+	public int deleteUrl(@Param("id") int id);
 }

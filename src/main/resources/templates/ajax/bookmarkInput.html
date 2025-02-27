@@ -90,12 +90,15 @@
 				, success:function(response) {
 					if(response.result == 1) {
 						location.href="/ajax/bookmark/info";
+						return;
 					} else {
-						alert("즐겨 찾기 추가 실패");	
+						alert("즐겨 찾기 추가 실패");
+						return;
 					}
 				}
 				, error:function(response) {
 					alert("즐겨 찾기 추가 에러");
+					return;
 				}
 			})
 			

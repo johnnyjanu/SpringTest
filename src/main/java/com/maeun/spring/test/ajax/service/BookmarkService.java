@@ -24,11 +24,16 @@ public class BookmarkService {
 	
 	public Boolean isDuplicateUrl(String url) {
 		int count = bookmarkRepository.selectDuplicateByUrl(url);
-		if(count == 0) {
-			return false;
-		} else {
-			return true;
-		}
+//		if(count == 0) {
+//			return false;
+//		} else {
+//			return true;
+//		}
+		return count != 0;
+	}
+	
+	public int deleteUrl(int id) {
+		return bookmarkRepository.deleteUrl(id);
 	}
 	
 }

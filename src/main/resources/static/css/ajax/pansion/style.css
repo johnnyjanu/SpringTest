@@ -1,0 +1,64 @@
+#wrap {
+    width:1200px;
+    margin:0 auto;
+}
+
+.logo {
+    height:100px;
+}
+
+.main-menu {
+    height:40px;
+    background-color:peru;
+}
+
+.contents > .banner {
+    height:500px;
+}
+
+.contents > .t-title {
+	height:100px;
+}
+
+.main-contents > .reservation {
+    height:300px;
+    background-color:chocolate;
+}
+
+.address > .font-size {
+    font-size:25px;
+}
+
+.main-contents > .confirm {
+    height:300px;
+    background-color:sienna;
+}
+
+.confirm > .rev-font {
+    font-size:50px;
+}
+
+.main-contents > .tel {
+    height:300px;
+    background-color:sienna;
+}
+
+.tels > .rev-font {
+    font-size:25px;
+}
+
+.tels > .tel-font {
+    font-size:35px;
+}
+
+footer {
+    height:90px;
+}
+
+footer > .copyright {
+    font-size:small;
+}
+
+.d-none {
+    display:none;
+}

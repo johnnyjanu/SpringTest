@@ -54,4 +54,13 @@ public class BookmarkController {
 		return resultMap;
 	}
 	
+	@ResponseBody
+	@GetMapping("/delete")
+	public Map<String, Integer> deleteUrl(@RequestParam("id") int id) {
+		int result = bookmarkService.deleteUrl(id);
+		Map<String, Integer> resultMap = new HashMap<>();
+		resultMap.put("result", result);
+		return resultMap;
+	}
+	
 }
