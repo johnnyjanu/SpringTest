@@ -26,5 +26,40 @@
  		WHERE
  			`id` = #{id}
  	</delete>
+ 	<insert id="insertBooking"
+ 	parameterType="map">
+ 		INSERT INTO
+ 			`booking`
+ 		(
+ 			`name`
+ 			, `headcount`
+ 			, `day`
+ 			, `date`
+ 			, `phoneNumber`
+ 			, `state`
+ 		)
+ 		VALUE
+ 		(
+ 			#{name}
+ 			, #{headcount}
+ 			, #{day}
+ 			, #{date}
+ 			, #{phoneNumber}
+ 			, #{state}
+ 		)
+ 	</insert>
+ 	<select id="selectBookingByInform"
+ 	parameterType="map" resultType="map">
+ 		SELECT
+ 			`name`
+ 			, `headcount`
+ 			, `day`
+ 			, `date`
+ 			, `state`
+ 		FROM
+ 			`booking`
+ 		WHERE
+ 			`name` = #{name} AND `phoneNumber` = {phoneNumber}
+ 	</select>
  	
  </mapper>
