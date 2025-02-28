@@ -59,7 +59,7 @@
  		FROM
  			`booking`
  		WHERE
- 			`name` = #{name} AND `phoneNumber` = {phoneNumber}
+ 			`name` = #{name} AND `phoneNumber` = #{phoneNumber}
  	</select>
  	
  </mapper>

@@ -74,4 +74,8 @@ public class BookingController {
 	return bookingService.checkBooking(name, phoneNumber);
 	}
 	
+	@GetMapping("/notready")
+	public String notReady() {
+		return "ajax/bookingNotReady";
+	}
 }
