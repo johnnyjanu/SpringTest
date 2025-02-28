@@ -28,7 +28,7 @@ public class BookingService {
 		return bookingRepository.insertBooking(name, headcount, day, date, phoneNumber, state);
 	}
 	
-	public Map<String, Object> checkBooking(String name, String phoneNumber) {
+	public Booking checkBooking(String name, String phoneNumber) {
 		return bookingRepository.selectBookingByInform(name, phoneNumber);
 	}
 	

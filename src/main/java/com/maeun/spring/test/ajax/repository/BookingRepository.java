@@ -22,7 +22,7 @@ public interface BookingRepository {
 				, @Param("phoneNumber") String phoneNumber
 				, @Param("state") String state
 			);
-	public Map<String, Object> selectBookingByInform(
+	public Booking selectBookingByInform(
 				@Param("name") String name,
 				@Param("phoneNumber") String phoneNumber
 			);

@@ -49,7 +49,7 @@
  		)
  	</insert>
  	<select id="selectBookingByInform"
- 	parameterType="map" resultType="map">
+ 	parameterType="map" resultType="com.maeun.spring.test.ajax.domain.Booking">
  		SELECT
  			`name`
  			, `headcount`
@@ -59,7 +59,7 @@
  		FROM
  			`booking`
  		WHERE
- 			`name` = #{name} AND `phoneNumber` = {phoneNumber}
+ 			`name` = #{name} AND `phoneNumber` = #{phoneNumber}
  	</select>
  	
  </mapper>
